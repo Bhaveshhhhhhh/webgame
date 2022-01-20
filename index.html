@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+    <style>
+        .container {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .dice {
+            text-align: center;
+            display: inline-block;
+
+        }
+
+        body {
+            background-color: #e57bffda;
+        }
+        h3{
+          margin: 15px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 3rem;
+            color: #2f00ff;
+            font-style: oblique;
+            text-shadow: #eeeeee;
+        }
+
+        h1 {
+            margin: 30px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 6rem;
+            color: #fbff00;
+        }
+
+        p {
+          font-style: italic;
+            font-size: 2rem;
+            color: #fbff00;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        img {
+            width: 80%;
+        }
+
+        footer {
+            margin-top: 5%;
+            color: #eeeeee;
+            text-align: center;
+            font-size: 1.8rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+      <h3>Refresh This Page 🔄</h3>
+        <h1>Refresh Me</h1>
+
+        <div class="dice">
+            <p>Player 1</p>
+            <img class="img1" src="images/dice1.png">
+        </div>
+
+        <div class="dice">
+            <p>Player 2</p>
+            <img class="img2" src="images/dice1.png">
+        </div>
+    </div>
+    <footer>
+        By Bhavesh Choudhary
+        <i class="social-icon fab fa-facebook"></i>
+        <i class="social-icon fab fa-github"></i>
+        <i class="social-icon fab fa-YouTube"></i>
+        <h6>© Copyright</h6>
+
+    </footer>
+    <script type="text/javascript">
+        var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+        var randomDice = "dice" + randomNumber1 +".png"; 
+        var randomImge1 = "images/" + randomDice;
+        var image1 = document.querySelectorAll("img")[0];
+        image1.setAttribute("src",randomImge1);
+
+        var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+        var randomImge2 = "images/dice" + randomNumber2 +".png";
+        var image1 = document.querySelectorAll("img")[1].setAttribute("src", randomImge2);
+
+        if(randomNumber1 > randomNumber2){
+        document.querySelector("h1").innerHTML = "Player 1 Wins 💸"
+        }
+
+        else if(randomNumber1 < randomNumber2){
+        document.querySelector("h1").innerHTML = "Player 2 Wins 💸"
+        }
+        else
+        {
+          document.querySelector("h1").innerHTML = "Draw Try Again 💀"
+        }
+
+</script>
+</body>
+</html>
